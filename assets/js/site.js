@@ -121,7 +121,7 @@
         method:"POST",
         headers:{
           "Content-Type":"application/json",
-          "X-Publishable-Key":"YOUR_PUBLISHABLE_KEY"
+          "X-Publishable-Key":"pk_live_0932aeb6f525c95160924ea345f99c8cdb962e96377e760b"
         },
         body:JSON.stringify(body)
       }).then(function(res){
