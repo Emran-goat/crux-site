@@ -268,8 +268,30 @@ h3.display{
   background-image:linear-gradient(90deg,#ffffff2c 1px,transparent 1px),linear-gradient(0deg,#ffffff2c 1px,transparent 1px);
   background-size:48px 48px;
   -webkit-mask-image:radial-gradient(90% 85% at 50% 42%,#000 55%,transparent 100%);
-  mask-image:radial-gradient(80% 65% at 50% 38%,#000 35%,transparent 100%);
+  mask-image:radial-gradient(90% 85% at 50% 42%,#000 55%,transparent 100%);
   pointer-events:none;
+}
+.hero::after{
+  content:"";
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  width:26vw;
+  min-width:280px;
+  z-index:1;
+  pointer-events:none;
+  background:linear-gradient(90deg,transparent 0%,rgba(255,183,77,.05) 38%,rgba(255,255,255,.08) 50%,rgba(255,183,77,.05) 62%,transparent 100%);
+  mix-blend-mode:screen;
+  -webkit-mask-image:radial-gradient(90% 85% at 50% 42%,#000 55%,transparent 100%);
+  mask-image:radial-gradient(90% 85% at 50% 42%,#000 55%,transparent 100%);
+  transform:translate3d(-60vw,0,0);
+  animation:hero-scan 11s cubic-bezier(.22,.61,.36,1) infinite;
+}
+@keyframes hero-scan{
+  0%{transform:translate3d(-60vw,0,0)}
+  13%{transform:translate3d(140vw,0,0)}
+  100%{transform:translate3d(140vw,0,0)}
 }
 .hero-grid{
   position:relative;
@@ -1247,5 +1269,6 @@ html{scroll-behavior:smooth}
   html{scroll-behavior:auto}
   .reveal{opacity:1;transform:none;clip-path:none;transition:none}
   .hero-term .term-body>*:not(:first-child){opacity:1}
+  .hero::after{animation:none;opacity:0}
   *{animation:none!important}
 }
