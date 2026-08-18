@@ -1,0 +1,230 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Features - CRUX</title>
+<meta name="description" content="Causal blame. Minimized diffs. Dependency-transitive blame. Interaction faults. Watch mode. The features that answer one question.">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="CRUX">
+<meta property="og:title" content="Features - CRUX">
+<meta property="og:description" content="Causal blame. Minimized diffs. Dependency-transitive blame. Interaction faults. Watch mode. The features that answer one question.">
+<meta property="og:image" content="https://SITE-URL/assets/img/social-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Features - CRUX">
+<meta name="twitter:description" content="Causal blame. Minimized diffs. Dependency-transitive blame. Interaction faults. Watch mode. The features that answer one question.">
+<meta name="twitter:image" content="https://SITE-URL/assets/img/social-card.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/crux.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap top-in">
+    <a class="brand" href="index.html" aria-label="CRUX home">
+      <svg class="mark" width="28" height="28" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <g stroke="currentColor" stroke-width="2.6" stroke-linecap="square">
+          <path d="M7 20V7H20"/>
+          <path d="M44 7H57V20"/>
+          <path d="M57 44V57H44"/>
+          <path d="M20 57H7V44"/>
+          <path d="M32 26V32"/>
+          <path d="M32 34V38"/>
+          <path d="M26 32H32"/>
+          <path d="M34 32H38"/>
+        </g>
+        <polygon points="32,29.4 35.4,32 32,34.6 28.6,32" fill="#E8A33B"/>
+      </svg>
+      CRUX
+    </a>
+    <nav aria-label="Primary">
+      <ul class="nav-links" id="nav">
+        <li><a href="how-it-works.html">How it works</a></li>
+        <li><a class="is-active" href="features.html" aria-current="page">Features</a></li>
+        <li><a href="waitlist.html">Join the waitlist</a></li>
+      </ul>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-primary" href="waitlist.html">Join the waitlist</a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
+    </div>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <h1 class="display reveal">What CRUX actually does</h1>
+    <p class="lede reveal">Nine capabilities. One question they all answer. Which commit changed this behavior.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="cluster">
+      <div class="idx reveal">01</div>
+      <div class="cluster-head reveal">
+        <div class="bar"></div>
+        <h3>Find the cause</h3>
+      </div>
+      <div class="rows">
+        <div class="row-mini reveal">
+          <div class="rt">Causal blame</div>
+          <div class="rd">Ask about a behavior and get the commit. Not a build. A behavior.</div>
+        </div>
+        <div class="row-mini reveal">
+          <div class="rt">Minimized diffs</div>
+          <div class="rd">The change shrinks to its essential lines. The real cause survives. The noise does not.</div>
+        </div>
+        <div class="row-mini reveal">
+          <div class="rt">Interaction faults</div>
+          <div class="rd">Two commits pass alone. Merged they break the build. CRUX names the pair.</div>
+        </div>
+        <div class="row-mini reveal">
+          <div class="rt">Ranked honesty</div>
+          <div class="rd">Ambiguous causes come ranked with the evidence for each candidate. You decide the tie.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cluster">
+      <div class="idx reveal">02</div>
+      <div class="cluster-head reveal">
+        <div class="bar"></div>
+        <h3>See the whole chain</h3>
+      </div>
+      <div class="rows">
+        <div class="row-mini reveal">
+          <div class="rt">Dependency-transitive blame</div>
+          <div class="rd">Your code stayed clean. The library under you changed. CRUX blames the library.</div>
+        </div>
+        <div class="row-mini reveal">
+          <div class="rt">Environmental honesty</div>
+          <div class="rd">The config moved. Not the code. CRUX separates the two.</div>
+        </div>
+        <div class="row-mini reveal">
+          <div class="rt">History rewrite proof</div>
+          <div class="rd">Rebases and squashes change nothing. CRUX blames the original commit not the wrapper.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cluster">
+      <div class="idx reveal">03</div>
+      <div class="cluster-head reveal">
+        <div class="bar"></div>
+        <h3>Catch it before it ships</h3>
+      </div>
+      <div class="rows">
+        <div class="row-mini reveal">
+          <div class="rt">Watch mode</div>
+          <div class="rd">Declare golden behaviors. CRUX watches every PR and flags drift with the blame attached.</div>
+        </div>
+        <div class="row-mini reveal">
+          <div class="rt">Prediction</div>
+          <div class="rd">Feed CRUX a PR and it lists which behaviors will change. Before merge. Before breakage.</div>
+        </div>
+        <div class="row-mini reveal">
+          <div class="rt">Reproducible findings</div>
+          <div class="rd">Every report replays in a sealed world. Same input. Same seed. Same output.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section band">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="idx reveal">04</span>
+      <h2 class="display reveal">What CRUX is not</h2>
+    </div>
+    <div class="rows">
+      <div class="row reveal">
+        <div class="rt">Not a debugger</div>
+        <div class="rd">It answers one question. It will not step through your code.</div>
+      </div>
+      <div class="row reveal">
+        <div class="rt">Not a linter</div>
+        <div class="rd">It does not judge your style. It does not care about your smells.</div>
+      </div>
+      <div class="row reveal">
+        <div class="rt">Not a CI runner</div>
+        <div class="rd">It reads history and behavior. That is the whole job.</div>
+      </div>
+    </div>
+    <p class="sub reveal" style="margin-top:36px;max-width:44ch">One question runs the whole product. Which commit changed this behavior. If a feature does not serve that question it does not ship.</p>
+  </div>
+</section>
+
+<section class="section cta-band">
+  <div class="wrap cta-in">
+    <div>
+      <h2 class="display reveal">Skip the guess. Get the build.</h2>
+      <p class="lede reveal" style="margin-top:18px">The CLI ships free forever. Hosted watch mode comes later. Join the list and the first build lands in your inbox.</p>
+    </div>
+    <div class="form-wrap reveal">
+      <form class="form" novalidate>
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required placeholder="you@yourrepo.dev">
+        </div>
+        <div class="field">
+          <label for="stack">What do you build with</label>
+          <select id="stack" name="stack">
+            <option value="">Pick one</option>
+            <option>Node</option>
+            <option>Python</option>
+            <option>Go</option>
+            <option>Rust</option>
+            <option>Java</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <button class="btn btn-primary" type="submit">Join the waitlist</button>
+        <p class="form-note">One email per update. No lists sold. Unsubscribe anytime.</p>
+        <div class="form-ok">
+          <span class="t">You are on the list</span>
+          We email once when the first build is ready.
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <span class="tag">CRUX</span>
+        <p class="note">The exact commit behind a behavior change. Replayed. Not guessed.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="how-it-works.html">How it works</a></li>
+          <li><a href="features.html">Features</a></li>
+          <li><a href="waitlist.html">Join the waitlist</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="privacy.html">Privacy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-base">
+      <span>Blame the commit. Not the human.</span>
+      <span>&copy; 2026 CRUX</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,247 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How it works - CRUX</title>
+<meta name="description" content="Point at a behavior. Hunt the history. Read the fingerprint. CRUX finds the commit and the lines behind any behavior change.">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="CRUX">
+<meta property="og:title" content="How it works - CRUX">
+<meta property="og:description" content="Point at a behavior. Hunt the history. Read the fingerprint. CRUX finds the commit and the lines behind any behavior change.">
+<meta property="og:image" content="https://SITE-URL/assets/img/social-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How it works - CRUX">
+<meta name="twitter:description" content="Point at a behavior. Hunt the history. Read the fingerprint. CRUX finds the commit and the lines behind any behavior change.">
+<meta name="twitter:image" content="https://SITE-URL/assets/img/social-card.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/crux.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap top-in">
+    <a class="brand" href="index.html" aria-label="CRUX home">
+      <svg class="mark" width="28" height="28" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <g stroke="currentColor" stroke-width="2.6" stroke-linecap="square">
+          <path d="M7 20V7H20"/>
+          <path d="M44 7H57V20"/>
+          <path d="M57 44V57H44"/>
+          <path d="M20 57H7V44"/>
+          <path d="M32 26V32"/>
+          <path d="M32 34V38"/>
+          <path d="M26 32H32"/>
+          <path d="M34 32H38"/>
+        </g>
+        <polygon points="32,29.4 35.4,32 32,34.6 28.6,32" fill="#E8A33B"/>
+      </svg>
+      CRUX
+    </a>
+    <nav aria-label="Primary">
+      <ul class="nav-links" id="nav">
+        <li><a class="is-active" href="how-it-works.html" aria-current="page">How it works</a></li>
+        <li><a href="features.html">Features</a></li>
+        <li><a href="waitlist.html">Join the waitlist</a></li>
+      </ul>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-primary" href="waitlist.html">Join the waitlist</a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
+    </div>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <h1 class="display reveal">Point at a behavior.<br>Get the cause.</h1>
+    <p class="lede reveal">CRUX walks your history and answers one question. Which commit changed this behavior and which lines did the work.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="idx reveal">01</span>
+      <h2 class="display reveal">Four moves. One answer.</h2>
+    </div>
+    <div class="grid-2">
+      <div class="cell reveal">
+        <h3>Point</h3>
+        <p>You name a behavior. A command. A test. A benchmark. Narrow targets come back fast. Wide ones take longer.</p>
+      </div>
+<div class="cell reveal">
+        <h3>Hunt</h3>
+        <p>CRUX walks 412 commits in range. Each gets a probe run in a sealed sandbox. The walk stops when the behavior flips.</p>
+      </div>
+      <div class="cell reveal">
+        <h3>Trim</h3>
+        <p>The flipping commit is the start. CRUX cuts the change down. Hunks drop. Inputs shrink. Env vars narrow. The cut stops when the change stops reproducing.</p>
+      </div>
+      <div class="cell reveal">
+        <h3>Report</h3>
+        <p>You get the commit and the trimmed cause. The report cites the run. One command recreates the whole finding.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section band">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="idx reveal">02</span>
+      <h2 class="display reveal">Every run in a sealed world</h2>
+      <p class="sub reveal">Your probe runs against a pinned snapshot. Same toolchain. Same inputs. Same seed. No network surprises. No floating versions. When CRUX reports a flip it proves it with a replay.</p>
+    </div>
+    <div class="term reveal" style="max-width:680px;margin:0 auto">
+      <div class="term-bar">
+        <span class="term-dot on"></span>
+        <span class="term-dot"></span>
+        <span class="term-dot"></span>
+        <span class="term-title">crux replay</span>
+      </div>
+      <div class="term-body">
+        <span class="ln"><span class="pf">$</span> <span class="cmd"><span class="c">crux replay 7f31ac+batch1024+seed42</span></span></span>
+        <span class="ln">World 7f31ac+batch1024+seed42  sealed</span>
+        <span class="ln">Toolchain python 3.12.2  pinned</span>
+        <span class="ln">Input seed 42  batch size 1024</span>
+        <span class="ln">Commits 7f31ac  parent 9c02e7</span>
+        <span class="ln">Probe ./encode.mjs sample.bin</span>
+        <span class="ln">Pass 1 before  1.02s  128 bytes</span>
+        <span class="ln">Pass 2 after   0.84s  128 bytes</span>
+        <span class="ln"><span class="g">Result reproduced. Blame stands.</span></span>
+        <span class="ln"><span class="pf">$</span> <span class="cmd">&#9608;</span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="idx reveal">03</span>
+      <h2 class="display reveal">Pick a behavior. Any behavior.</h2>
+    </div>
+    <div class="targets">
+      <div class="target-sharp reveal">
+        <div class="t">Test pass or fail</div>
+        <div class="d">The simplest target. A runner command is enough. Exit code tells the story.</div>
+      </div>
+      <div class="target-sharp reveal">
+        <div class="t">Output equality</div>
+        <div class="d">Same input. New output. CRUX spots the drift and pins the commit.</div>
+      </div>
+      <div class="target-sharp reveal">
+        <div class="t">Latency</div>
+        <div class="d">A regression is a behavior too. CRUX hunts timing drift across the range.</div>
+      </div>
+      <div class="target-sharp reveal">
+        <div class="t">Memory</div>
+        <div class="d">Peak usage climbs across a range. CRUX finds the commit that moved it.</div>
+      </div>
+      <div class="target-sharp reveal">
+        <div class="t">API surface</div>
+        <div class="d">Signatures appear or vanish. CRUX sees the shape change and names it.</div>
+      </div>
+      <div class="target-sharp reveal">
+        <div class="t">Log lines</div>
+        <div class="d">A line appears in the logs. That is a behavior as well. Same hunt.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section band">
+  <div class="wrap" style="max-width:820px;">
+    <div class="section-head">
+      <span class="idx reveal">04</span>
+      <h2 class="display reveal">What you never get</h2>
+    </div>
+    <div class="rows-mini">
+      <div class="row-mini reveal">
+        <div class="rt">No build log dumps</div>
+        <div class="rd">CRUX reads behavior and history. It does not read your CI noise.</div>
+      </div>
+      <div class="row-mini reveal">
+        <div class="rt">No confident guesses</div>
+        <div class="rd">When the cause is fuzzy you get a ranked list with evidence for each candidate.</div>
+      </div>
+      <div class="row-mini reveal">
+        <div class="rt">No unrepeatable findings</div>
+        <div class="rd">A finding without a replay command does not ship.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section cta-band">
+  <div class="wrap cta-in">
+    <div>
+      <h2 class="display reveal">Skip the guess. Get the build.</h2>
+      <p class="lede reveal" style="margin-top:18px">The CLI ships free forever. Hosted watch mode comes later. Join the list and the first build lands in your inbox.</p>
+    </div>
+    <div class="form-wrap reveal">
+      <form class="form" novalidate>
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required placeholder="you@yourrepo.dev">
+        </div>
+        <div class="field">
+          <label for="stack">What do you build with</label>
+          <select id="stack" name="stack">
+            <option value="">Pick one</option>
+            <option>Node</option>
+            <option>Python</option>
+            <option>Go</option>
+            <option>Rust</option>
+            <option>Java</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <button class="btn btn-primary" type="submit">Join the waitlist</button>
+        <p class="form-note">One email per update. No lists sold. Unsubscribe anytime.</p>
+        <div class="form-ok">
+          <span class="t">You are on the list</span>
+          We email once when the first build is ready.
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <span class="tag">CRUX</span>
+        <p class="note">The exact commit behind a behavior change. Replayed. Not guessed.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="how-it-works.html">How it works</a></li>
+          <li><a href="features.html">Features</a></li>
+          <li><a href="waitlist.html">Join the waitlist</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="privacy.html">Privacy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-base">
+      <span>Blame the commit. Not the human.</span>
+      <span>&copy; 2026 CRUX</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/site.js"></script>
+</body>
+</html>
