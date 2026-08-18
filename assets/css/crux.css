@@ -877,6 +877,28 @@ html{scroll-behavior:smooth}
   font-size:14px;
   line-height:1.5;
 }
+.tier-perks{
+  list-style:none;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  margin-top:4px;
+}
+.tier-perks li{
+  position:relative;
+  color:var(--dim);
+  font-size:13.5px;
+  line-height:1.45;
+  padding-left:18px;
+}
+.tier-perks li::before{
+  content:"+";
+  position:absolute;
+  left:0;
+  color:var(--accent);
+  font-family:var(--mono);
+  font-size:12px;
+}
 .tier-hot{
   border-color:var(--accent-dim);
 }
