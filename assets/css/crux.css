@@ -829,6 +829,7 @@ html{scroll-behavior:smooth}
 .sponsor-band{
   border-top:1px solid var(--line-soft);
   border-bottom:1px solid var(--line-soft);
+  scroll-margin-top:76px;
 }
 .tiers{
   display:grid;
