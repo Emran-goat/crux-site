@@ -201,6 +201,40 @@
     });
   }
 
+  /* sponsor wall from sponsors.json */
+  var wall=document.querySelector(".wall");
+  if(wall){
+    fetch("sponsors.json",{cache:"no-store"})
+      .then(function(res){
+        if(!res.ok)throw new Error("no data");
+        return res.json();
+      })
+      .then(function(list){
+        if(!Array.isArray(list)||list.length===0)return;
+        var rank={patron:0,builder:1,supporter:2};
+        list.sort(function(a,b){return (rank[a.tier]??3)-(rank[b.tier]??3)});
+        wall.setAttribute("aria-hidden","false");
+        wall.className="wall has-sponsors";
+        wall.innerHTML="";
+        list.forEach(function(s){
+          var el=document.createElement("div");
+          el.className="sponsor sponsor-"+(s.tier||"supporter");
+          var name=document.createElement("span");
+          name.className="sname";
+          name.textContent=s.name||"a backer";
+          el.appendChild(name);
+          if(s.comment){
+            var c=document.createElement("span");
+            c.className="scom";
+            c.textContent=s.comment;
+            el.appendChild(c);
+          }
+          wall.appendChild(el);
+        });
+      })
+      .catch(function(){});
+  }
+
   /* header dim on scroll */
   var hdr=document.querySelector(".top");
   if(hdr){

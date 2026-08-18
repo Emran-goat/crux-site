@@ -825,6 +825,117 @@ html{scroll-behavior:smooth}
 .page-hero h1.display{font-size:clamp(1.45rem,3.4vw,2.5rem);max-width:26ch}
 .page-hero .lede{max-width:56ch}
 
+/* SPONSOR BAND */
+.sponsor-band{
+  border-top:1px solid var(--line-soft);
+  border-bottom:1px solid var(--line-soft);
+}
+.tiers{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+  margin-bottom:48px;
+}
+.tier{
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  background:rgba(17,17,19,.55);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.03);
+  padding:24px 22px;
+  transition:transform .15s cubic-bezier(.16,1,.3,1),border-color .2s,background-color .2s;
+}
+.tier:hover{
+  transform:translateY(-2px);
+  border-color:var(--border-strong);
+  background:#ffffff08;
+}
+.tier-name{
+  font-family:var(--mono);
+  font-size:12px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--dim);
+}
+.tier-price{
+  font-size:30px;
+  font-weight:600;
+  letter-spacing:-.02em;
+  line-height:1;
+}
+.tier-per{
+  font-size:14px;
+  font-weight:400;
+  color:var(--dim-2);
+  margin-left:2px;
+}
+.tier-line{
+  color:var(--dim);
+  font-size:14px;
+  line-height:1.5;
+}
+.tier-hot{
+  border-color:var(--accent-dim);
+}
+.tier-hot .tier-name{color:var(--accent)}
+.wall{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:64px;
+  border:1px dashed var(--border-strong);
+  border-radius:var(--radius);
+  background:var(--ink-2);
+}
+.wall-empty{
+  font-family:var(--mono);
+  font-size:13px;
+  letter-spacing:.08em;
+  color:var(--dim-2);
+}
+.wall.has-sponsors{
+  flex-direction:column;
+  gap:10px;
+  align-items:stretch;
+  justify-content:flex-start;
+  padding:18px;
+}
+.sponsor{
+  display:flex;
+  align-items:baseline;
+  gap:14px;
+  padding:12px 16px;
+  border:1px solid var(--line-soft);
+  border-radius:var(--radius-sm);
+  background:rgba(17,17,19,.55);
+}
+.sponsor-patron{
+  border-color:var(--accent-dim);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.03);
+}
+.sponsor-patron .sname{color:var(--accent)}
+.sname{
+  font-family:var(--mono);
+  font-size:14px;
+  font-weight:700;
+  letter-spacing:.02em;
+  color:var(--bone);
+}
+.scom{
+  color:var(--dim);
+  font-size:14px;
+  line-height:1.5;
+}
+@media(max-width:820px){
+  .sponsor{flex-direction:column;gap:4px;align-items:flex-start}
+}
+@media(max-width:820px){
+  .tiers{grid-template-columns:1fr}
+}
+
 /* FOOT */
 .foot{
   position:relative;
