@@ -107,7 +107,29 @@
   document.querySelectorAll(".form").forEach(function(form){
     form.addEventListener("submit",function(e){
       e.preventDefault();
-      form.classList.add("is-sent");
+      var email=form.querySelector("input[type=email]");
+      var stack=form.querySelector("select[name=stack]");
+      var ok=form.querySelector(".form-ok");
+      var err=form.querySelector(".form-err");
+      if(!email||!email.value||!/\S+@\S+\.\S+/.test(email.value)){
+        if(err){err.textContent="Enter a real email address."}
+        return;
+      }
+      var body={email:email.value.trim()};
+      if(stack&&stack.value){body.provider=stack.value}
+      fetch("https://api.ec.emcognito.com/subscribe",{
+        method:"POST",
+        headers:{
+          "Content-Type":"application/json",
+          "X-Publishable-Key":"YOUR_PUBLISHABLE_KEY"
+        },
+        body:JSON.stringify(body)
+      }).then(function(res){
+        if(res.status===201){form.classList.add("is-sent")}
+        else{return res.json().then(function(j){throw new Error(j.detail||"try again")})}
+      }).catch(function(){
+        if(err){err.textContent="Something went wrong. Try again."}
+      });
     });
   });
 

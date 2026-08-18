@@ -791,6 +791,12 @@ html{scroll-behavior:smooth}
 .form-ok .t{color:var(--accent);display:block;margin-bottom:8px;font-weight:700}
 .form.is-sent .form{display:none}
 .form.is-sent .form-ok{display:block}
+.form-err{
+  font-family:var(--mono);
+  font-size:12px;
+  color:var(--bad);
+  min-height:0;
+}
 
 /* CTA BAND */
 .cta-band{
